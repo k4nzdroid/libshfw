@@ -4,16 +4,16 @@ _log_date() {
 	date "+%Y-%m-%d %H:%M:%S"
 }
 
-log_debug() {
-    echo "[D] [$(_log_date)] $1"
+_log_debug() {
+    echo "${COLOR_GRAY}[D] [$(_log_date)] $1${COLOR_END}"
 }
 
-log_info() {
-	echo "[I] [$(_log_date)] $1" | grep -E --color '.+'
+_log_info() {
+	echo "${COLOR_GREEN}[I] [$(_log_date)] $1${COLOR_END}"
 }
-log_warn() {
-	echo "[W] [$(_log_date)] $1" | grep -E --color '.+'
+_log_warn() {
+	echo "${COLOR_YELLOW}[W] [$(_log_date)] $1${COLOR_END}"
 }
-log_error() {
-	echo "[E] [$(_log_date)] $1" | grep -E --color '.+'
+_log_error() {
+	echo "${COLOR_RED}[E] [$(_log_date)] $1${COLOR_END}"
 }
